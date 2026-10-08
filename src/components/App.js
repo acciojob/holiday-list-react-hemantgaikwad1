@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import './../styles/App.css';
 
 const App = () => {
+  
     const cityList = [{ name: 'Goa', country: 'India' },
     { name: 'Amsterdam', country: 'Netherlands' },
     { name: 'New York', country: 'USA' },
@@ -32,10 +33,26 @@ const App = () => {
     { name: 'Mount Abu', country: 'India' },
     { name: 'Tirupati', country: 'India' },
     ]
-    
+    const filteredarr = cityList.filter((item) => item.country === "India");
   return (
     <div id="main">
                {/* Do not remove the main div */}
+              
+<ol>
+            {
+
+                filteredarr.map((city,index)=>(
+             <li key={`location${index}`}>
+                  {city.name}
+             </li>
+
+          
+                ))
+
+    }
+                </ol>
+               
+
     </div>
   )
 }
